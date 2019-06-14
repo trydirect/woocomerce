@@ -33,9 +33,9 @@ assert nginx.status == 'running'
 # Symfony PHP
 php = client.containers.get('wordpress')
 assert php.status == 'running'
-php_conf = php.exec_run("php-fpm7.0 -t")
+php_conf = php.exec_run("php-fpm7.2 -t")
 # print(php_conf.output.decode())
-assert 'configuration file /etc/php/7.0/fpm/php-fpm.conf test is successful' in php_conf.output.decode()
+assert 'configuration file /etc/php/7.2/fpm/php-fpm.conf test is successful' in php_conf.output.decode()
 php_proc = php.exec_run("sh -c 'ps aux |grep php-fpm'")
 print(php_proc.output.decode())
 assert 'php-fpm: master process (/etc/php/7.0/fpm/php-fpm.conf)' in php_proc.output.decode()
