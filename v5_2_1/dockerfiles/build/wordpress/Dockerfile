@@ -9,7 +9,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get install -y software-properties-common \
                       mysql-client php7.2-fpm php7.2-mysql python-setuptools curl git unzip \
                       php7.2-dev libmcrypt-dev gcc make autoconf libc-dev pkg-config \
-                      php7.2-curl php7.2-gd php7.2-intl php7.2-pear php7.2-imagick php7.2-imap php7.2-memcache \
+                      php7.2-curl php7.2-gd php7.2-intl php-pear php7.2-imagick php7.2-imap php7.2-memcache \
 					  php7.2-pspell php7.2-recode php7.2-tidy php7.2-xmlrpc php7.2-xsl supervisor
 
 RUN groupadd -r -g 2000 wordpress; useradd -r -u 2000 -g 2000 -m -c "app account" -d /home/wordpress -s /bin/bash wordpress
